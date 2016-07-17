@@ -1,0 +1,17 @@
+#
+.gradle
+
+#
+.idea/
+
+#
+build/
+
+#
+out/
+
+#
+lib/
+
+#
+*.iml
