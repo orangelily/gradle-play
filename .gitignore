@@ -15,3 +15,7 @@ lib/
 
 #
 *.iml
+/bin/
+/.settings/
+.classpath
+.project
