@@ -199,7 +199,7 @@ public class BusinessService {
 							//标记满二送一的商品信息
 							discount2_1.put(key, value);
 						}else if(value.discountOption.equals("FIVE_PERCENT_OFF")){
-							value.discountPrice =value.subPrice - 0.05*value.goods.getPrice();
+							value.discountPrice =value.subPrice - 0.05*value.subPrice;
 							//标记满95折商品信息
 							discount95.put(key, value);
 						}else{

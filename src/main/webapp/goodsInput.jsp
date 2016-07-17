@@ -8,7 +8,7 @@
 <title>收银机打印小票</title>
 </head>
 <body>
-	<h1 style="text-align: center;">收银机 - G1 - 单品满100减10块</h1>
+	<h1 style="text-align: center;">收银机 -买二送一&95折优惠</h1>
 	<form action="${pageContext.request.contextPath }/GoodsInputAction" method="post">
 		<table style="margin: 0 auto;">
 			<tr>
