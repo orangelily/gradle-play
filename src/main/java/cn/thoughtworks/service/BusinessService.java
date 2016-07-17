@@ -187,7 +187,7 @@ public class BusinessService {
 									break;
 								}
 							}*/
-							int i=1;
+							int i=1;//实际需要买的件数
 							for(i=1;i<=value.count;i++){
 								if(i/2+i<value.count){
 									continue;
@@ -195,10 +195,12 @@ public class BusinessService {
 									break;
 								}
 							}
+							value.real_count = i;//记录下实际需要买的件数
 							value.discountPrice =i*value.goods.getPrice();
 							//标记满二送一的商品信息
 							discount2_1.put(key, value);
 						}else if(value.discountOption.equals("FIVE_PERCENT_OFF")){
+							value.real_count = value.count;
 							value.discountPrice =value.subPrice - 0.05*value.subPrice;
 							//标记满95折商品信息
 							discount95.put(key, value);
@@ -220,6 +222,7 @@ public class BusinessService {
 						
 					}else {
 						totalPrice+=value.subPrice;
+						value.real_count = value.count;
 						/*	名称：可口可乐，数量：3瓶，单价：3.00(元)，小计：9.00(元) 
 						 * 	名称：羽毛球，数量：5个，单价：1.00(元)，小计：5.00(元) 
 						 * 	名称：苹果，数量：2斤，单价：5.50(元)，小计：11.00(元)
@@ -252,12 +255,11 @@ public class BusinessService {
 							String key = (String) entry.getKey();
 							//获取优惠商品的原总价、折扣价等信息
 							GoodsInCar goodsInCar = (GoodsInCar) entry.getValue();
-							/*
-							 * 单品满100减10块商品： 篮球，原价：186.00(元)，优惠： 10.00(元)
-							 * 总计：201.00(元) 节省：10.00(元)
-							 */
+							
 							sb.append("\n");
-							sb.append(goodsInCar.goods.getName());
+							sb.append(goodsInCar.goods.getName()+",");
+							sb.append(goodsInCar.count-goodsInCar.real_count);
+							sb.append(goodsInCar.goods.getUnit());
 							sb.append(",原价");
 							sb.append(df.format(goodsInCar.subPrice));
 							sb.append("(元),优惠");

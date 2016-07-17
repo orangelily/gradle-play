@@ -31,7 +31,7 @@
 
 			<tr>
 				<td>优惠促销信息：</td>
-				<td><textarea  rows="5" cols="100" name="infoDiscount"><c:if test="${empty param.infoDiscount}">[{ type: 'FIVE_PERCENT_OFF', barcodes: [ 'ITEM000005', 'ITEM000001' ] } ,{ type: 'BUY_TWO_GET_ONE_FREE', barcodes: [ 'ITEM000001', 'ITEM000004', 'ITEM000003' ] }  ]</c:if><c:if test="${not empty param.infoDiscount}">${param.infoDiscount}
+				<td><textarea  rows="5" cols="100" name="infoDiscount"><c:if test="${empty param.infoDiscount}">[{ type: 'FIVE_PERCENT_OFF', barcodes: [ 'ITEM000005', 'ITEM000001' ] } ,{ type: 'BUY_TWO_GET_ONE_FREE', barcodes: [  'ITEM000004', 'ITEM000003' ,'ITEM000001' ] }  ]</c:if><c:if test="${not empty param.infoDiscount}">${param.infoDiscount}
 				</c:if></textarea>
 		</td>
 			</tr>
