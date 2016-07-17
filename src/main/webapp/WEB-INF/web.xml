@@ -19,4 +19,14 @@
     <servlet-name>Hello</servlet-name>
     <url-pattern>/Hello</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>GoodsInputAction</display-name>
+    <servlet-name>GoodsInputAction</servlet-name>
+    <servlet-class>cn.thoughtworks.action.GoodsInputAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoodsInputAction</servlet-name>
+    <url-pattern>/GoodsInputAction</url-pattern>
+  </servlet-mapping>
 </web-app>

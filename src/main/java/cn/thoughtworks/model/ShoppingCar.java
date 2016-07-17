@@ -14,6 +14,7 @@ public class ShoppingCar {
 		public Integer count=0;//数量
 		public Double subPrice=0.0;//同种商品未进行优惠的累计价格
 		public Double discountPrice=0.0;//优惠后的价格
+		public String discountOption="";//优惠选项
 		public GoodsInCar(Goods goods){
 			this.goods = goods;
 		}
@@ -23,7 +24,7 @@ public class ShoppingCar {
 	//购物车中不打则情况下的总价格
 	private Double totalPrice=0.0;
 	//商品扫码
-	public void addGoods(Goods goods,int count){
+	public void addGoods(Goods goods,int count,String discountOption){
 		if (goods==null||goods.getBarcode()==null||goods.getBarcode().equals("")) {
 			return;
 		}
@@ -35,6 +36,7 @@ public class ShoppingCar {
 		gc.count += count;
 		gc.subPrice=gc.count*goods.getPrice();
 		totalPrice+=goods.getPrice();
+		gc.discountOption = discountOption;
 		shopCar.put(goods.getBarcode(), gc);
 	}
 	//////////////////////////////////////////////////////
