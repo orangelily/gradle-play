@@ -12,6 +12,7 @@ public class ShoppingCar {
 	public class GoodsInCar{
 		public Goods goods;
 		public Integer count=0;//数量
+		public Integer real_count=0;//实际需要购买数量
 		public Double subPrice=0.0;//同种商品未进行优惠的累计价格
 		public Double discountPrice=0.0;//优惠后的价格
 		public String discountOption="";//优惠选项
