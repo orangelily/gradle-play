@@ -19,6 +19,22 @@ public class Main {
 		String allGoods = readFile("/cn/thoughtworks/Goods.json", "UTF-8");
 		//折扣信息
 		String discount = readFile("/cn/thoughtworks/Discount.json", "UTF-8");
+		BusinessService goodsService = new BusinessService();
+		try {
+			goodsService.initGoods(allGoods);
+			goodsService.initDiscount(discount);
+		} catch (Exception e) {
+			// e.printStackTrace();
+			if (e instanceof GoodsInfoException) {
+				System.out.println("商品入库信息输入格式有误");
+			} else if (e instanceof DiscountInfoException) {
+				System.out.println("优惠信息输入格式有误");
+			}else{
+				System.out.println("系统错误");
+			}
+			return;
+		}
+		
 		//System.out.println(discount);
 		//控制台读入条码ctrl+z结束
 		/**
@@ -39,22 +55,15 @@ public class Main {
 		while (scanner.hasNextLine()) {
 			shoppingCar.append(scanner.nextLine());
 		}
-		BusinessService goodsService = new BusinessService();
 		try {
-			goodsService.initGoods(allGoods);
-			goodsService.initDiscount(discount);
 			goodsService.initShopCar(shoppingCar.toString());
 			// 设置打印购物清单
 			System.out.println(goodsService.billCheck());
 
 		} catch (Exception e) {
 			// e.printStackTrace();
-			if (e instanceof GoodsInfoException) {
-				System.out.println("商品入库信息输入格式有误");
-			} else if (e instanceof ShopCarInfoException) {
+			if(e instanceof ShopCarInfoException) {
 				System.out.println("购物车扫码信息输入格式有误");
-			} else if (e instanceof DiscountInfoException) {
-				System.out.println("优惠信息输入格式有误");
 			} else if (e instanceof AddGoodsInCarInfoException) {
 				System.out.println("购物车中包含非法条形码"+e.getMessage()+"的商品,不属于本商店商品或没有进行扫描入库操作！");
 				
