@@ -19,3 +19,4 @@ lib/
 /.settings/
 .classpath
 .project
+/gradle.properties

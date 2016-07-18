@@ -1,0 +1,1 @@
+[{ type: 'FIVE_PERCENT_OFF', barcodes: [ 'ITEM000005', 'ITEM000001' ] } ,{ type: 'BUY_TWO_GET_ONE_FREE', barcodes: [  'ITEM000004', 'ITEM000003' ,'ITEM000001' ] }  ]

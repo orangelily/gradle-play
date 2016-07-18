@@ -1,0 +1,5 @@
+[{ barcode: 'ITEM000001', name: '可口可乐1', unit: '瓶', category: '食品', subCategory: '碳酸饮料', price: 13.00 },
+{ barcode: 'ITEM000002', name: '可口可乐2', unit: '瓶', category: '食品', subCategory: '碳酸饮料', price: 12.00 },
+{ barcode: 'ITEM000003', name: '可口可乐3', unit: '瓶', category: '食品', subCategory: '碳酸饮料', price: 7.30 },
+{ barcode: 'ITEM000004', name: '可口可乐4', unit: '瓶', category: '食品', subCategory: '碳酸饮料', price: 5.10 },
+{ barcode: 'ITEM000005', name: '可口可乐5', unit: '瓶', category: '食品', subCategory: '碳酸饮料', price: 5.20 }]
